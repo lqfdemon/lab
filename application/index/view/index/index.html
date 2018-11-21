@@ -1,0 +1,62 @@
+{extend name="common_page" /}
+{block name="private_file"}
+<script src="../../public/h_admin/js/plugins/metisMenu/jquery.metisMenu.js"></script>
+<script src="../../public/h_admin/js/plugins/slimscroll/jquery.slimscroll.min.js"></script>
+<script src="../../public/h_admin/js/hAdmin.js?v=4.1.0"></script>
+<script src="../../public/h_admin/js/index.js"></script>
+{/block}
+{block name="content"}
+<body class="fixed-sidebar full-height-layout gray-bg" style="overflow:hidden">
+    <div id="wrapper">
+        <!--左侧导航开始-->
+        <nav class="navbar-default navbar-static-side" role="navigation">
+            <div class="nav-close"><i class="fa fa-times-circle"></i>
+            </div>
+            <div class="sidebar-collapse">
+                <ul class="nav" id="side-menu">
+                    <li class="nav-header">
+                        <div class="dropdown profile-element">
+                            <a data-toggle="dropdown" class="dropdown-toggle" href="#">
+                                <span class="clear">
+                                    <span class="block m-t-xs" style="font-size:20px;">
+                                        <i class="fa fa-area-chart"></i>
+                                        <strong class="font-bold">后台管理系统</strong>
+                                    </span>
+                                </span>
+                            </a>
+                        </div>
+                        <div class="logo-element">hAdmin
+                        </div>
+                    </li>
+                    <li class="hidden-folded padder m-t m-b-sm text-muted text-xs">
+                        <span class="ng-scope">菜单</span>
+                    </li>
+                    <li>
+                        <a class="J_menuItem" href="{:url('index/SignIn/signIn')}">
+                            <i class="fa fa-file-pdf-o"></i>
+                            <span class="nav-label">文章</span>
+                        </a>
+                        <a class="J_menuItem" href="index_v1.html">
+                            <i class="fa fa-database"></i>
+                            <span class="nav-label">数据</span>
+                        </a>
+                        <a class="J_menuItem" href="index_v1.html">
+                            <i class="fa fa-users"></i>
+                            <span class="nav-label">成员</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+        <!--右侧部分开始-->
+        <div id="page-wrapper" class="gray-bg dashbard-1">
+            <div class="row J_mainContent" id="content-main">
+                <iframe id="J_iframe" width="100%" height="100%" src="{:url('index/SignIn/signIn')}" frameborder="0" data-id="index_v1.html" seamless></iframe>
+            </div>
+        </div>
+    </div>
+</body>
+<script type="text/javascript">
+    
+</script>
+{/block}

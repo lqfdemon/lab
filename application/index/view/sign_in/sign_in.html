@@ -1,0 +1,45 @@
+{extend name="common_page" /}
+{block name="content"}
+
+<body class="gray-bg">
+    <div class="middle-box text-center loginscreen  animated fadeInDown">
+        <div>
+            <div>
+                <h1 class="logo-name">h</h1>
+            </div>
+            <h3>后台管理系统</h3>
+            <form class="m-t">
+                <div class="form-group">
+                    <input id="account" type="text" class="form-control" placeholder="用户名" required="">
+                </div>
+                <div class="form-group">
+                    <input id="password" type="password" class="form-control" placeholder="密码" required="">
+                </div>
+            </form>
+            <button id="submit" class="btn btn-primary block full-width m-b">登 录</button>
+        </div>
+    </div>
+</body>
+<script type="text/javascript">
+    var $account = $("#account");
+    var $password = $("#password");
+
+    $("#submit").click(function(){
+        var sendData = {
+            'account':$account.val(),
+            'password':$password.val(),
+        }
+        console.log(sendData);
+        
+        $.post("{:url('check')}",sendData,function(data){
+            console.log(data);
+            if(data['code']){
+                window.location.href = "{:url('index/index/index')}";
+            }else{
+                layer.alert(data['msg']);
+            }
+        });
+        
+    });
+</script>
+{/block}
